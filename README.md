@@ -1,2 +1,2 @@
 # MapaPrueba
-Napa de Prueba 1
+Mapa de Prueba 1
