@@ -27,27 +27,26 @@ L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 18
 }).addTo(map);
 
-	function popup(feature, layer) { 
-	if (feature.properties && feature.properties.NOMBRE) 
-	{ 
-	layer.bindPopup(feature.properties.NOMBRE +"<br />Lote: "+ feature.properties.COD_LOTE); 
-	} 
-	}
+function popup(feature, layer) { 
+if (feature.properties && feature.properties.NOMBRE) 
+{ 
+layer.bindPopup(feature.properties.NOMBRE +"<br />Lote: "+ feature.properties.COD_LOTE); 
+} 
+}
 	
-	function style(feature) { 
-	return { 
-	fillColor: 'red',
-	weight: 0.5, 
-	opacity: 0.5, 
-	color: 'red', 
-	fillOpacity: 0.3 
-	}; 
-	}
+function style(feature) { 
+return { 
+fillColor: 'red',
+weight: 0.5, 
+opacity: 0.5, 
+color: 'red', 
+fillOpacity: 0.3 
+}; 
+}
 
-	geojson = L.geoJson(Lotes, { 
-	style: style, onEachFeature: popup 
-	}) 
-	.addTo(map);
+geojson = L.geoJson(Lotes, { 
+style: style, onEachFeature: popup 
+}).addTo(map);
 
 
 
